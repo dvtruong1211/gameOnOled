@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\daova\AppData\Local\Temp\ccYqfMmp.s 			page 1
+ARM GAS  C:\Users\daova\AppData\Local\Temp\cc6nVDok.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -20,11 +20,187 @@ ARM GAS  C:\Users\daova\AppData\Local\Temp\ccYqfMmp.s 			page 1
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
   19              		.file 1 "src/drivers/io.c"
-  20              	.Letext0:
-ARM GAS  C:\Users\daova\AppData\Local\Temp\ccYqfMmp.s 			page 2
+  20              		.section	.text.io_init,"ax",%progbits
+  21              		.align	1
+  22              		.global	io_init
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	io_init:
+  28              	.LFB0:
+   1:src/drivers/io.c **** 
+   2:src/drivers/io.c **** #include "io.h"
+   3:src/drivers/io.c **** 
+   4:src/drivers/io.c **** 
+   5:src/drivers/io.c **** 
+   6:src/drivers/io.c **** void io_init(void)
+   7:src/drivers/io.c **** {
+  29              		.loc 1 7 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+   8:src/drivers/io.c ****   
+   9:src/drivers/io.c **** }
+  34              		.loc 1 9 1 view .LVU1
+  35 0000 7047     		bx	lr
+  36              		.cfi_endproc
+  37              	.LFE0:
+  39              		.section	.text.io_out,"ax",%progbits
+  40              		.align	1
+  41              		.global	io_out
+  42              		.syntax unified
+  43              		.thumb
+  44              		.thumb_func
+  46              	io_out:
+  47              	.LVL0:
+  48              	.LFB1:
+  10:src/drivers/io.c **** 
+  11:src/drivers/io.c **** s_state_e io_out(GPIO_TypeDef *pGPIOx, io_pin_e pinNumber, io_state_e outState)
+  12:src/drivers/io.c **** {
+ARM GAS  C:\Users\daova\AppData\Local\Temp\cc6nVDok.s 			page 2
+
+
+  49              		.loc 1 12 1 view -0
+  50              		.cfi_startproc
+  51              		@ args = 0, pretend = 0, frame = 0
+  52              		@ frame_needed = 0, uses_anonymous_args = 0
+  53              		@ link register save eliminated.
+  13:src/drivers/io.c ****   if(outState == HIGH){
+  54              		.loc 1 13 3 view .LVU3
+  55              		.loc 1 13 5 is_stmt 0 view .LVU4
+  56 0000 032A     		cmp	r2, #3
+  57 0002 09D0     		beq	.L6
+  14:src/drivers/io.c ****     pGPIOx->BSRR |= (1U << pinNumber);
+  15:src/drivers/io.c ****   }
+  16:src/drivers/io.c ****   else if(outState == LOW){
+  58              		.loc 1 16 8 is_stmt 1 view .LVU5
+  59              		.loc 1 16 10 is_stmt 0 view .LVU6
+  60 0004 022A     		cmp	r2, #2
+  61 0006 0ED1     		bne	.L5
+  17:src/drivers/io.c ****     pGPIOx->BSRR |= ((1U << 16) << pinNumber);
+  62              		.loc 1 17 5 is_stmt 1 view .LVU7
+  63              		.loc 1 17 11 is_stmt 0 view .LVU8
+  64 0008 8369     		ldr	r3, [r0, #24]
+  65              		.loc 1 17 33 view .LVU9
+  66 000a 4FF48032 		mov	r2, #65536
+  67              	.LVL1:
+  68              		.loc 1 17 33 view .LVU10
+  69 000e 8A40     		lsls	r2, r2, r1
+  70              		.loc 1 17 18 view .LVU11
+  71 0010 1343     		orrs	r3, r3, r2
+  72 0012 8361     		str	r3, [r0, #24]
+  18:src/drivers/io.c ****   }
+  19:src/drivers/io.c ****   else
+  20:src/drivers/io.c ****     return S_ERROR;
+  21:src/drivers/io.c ****   return S_OK;
+  73              		.loc 1 21 10 view .LVU12
+  74 0014 0020     		movs	r0, #0
+  75              	.LVL2:
+  76              		.loc 1 21 10 view .LVU13
+  77 0016 7047     		bx	lr
+  78              	.LVL3:
+  79              	.L6:
+  14:src/drivers/io.c ****   }
+  80              		.loc 1 14 5 is_stmt 1 view .LVU14
+  14:src/drivers/io.c ****   }
+  81              		.loc 1 14 11 is_stmt 0 view .LVU15
+  82 0018 8369     		ldr	r3, [r0, #24]
+  14:src/drivers/io.c ****   }
+  83              		.loc 1 14 25 view .LVU16
+  84 001a 0122     		movs	r2, #1
+  85              	.LVL4:
+  14:src/drivers/io.c ****   }
+  86              		.loc 1 14 25 view .LVU17
+  87 001c 8A40     		lsls	r2, r2, r1
+  14:src/drivers/io.c ****   }
+  88              		.loc 1 14 18 view .LVU18
+  89 001e 1343     		orrs	r3, r3, r2
+  90 0020 8361     		str	r3, [r0, #24]
+  91              		.loc 1 21 10 view .LVU19
+ARM GAS  C:\Users\daova\AppData\Local\Temp\cc6nVDok.s 			page 3
+
+
+  92 0022 0020     		movs	r0, #0
+  93              	.LVL5:
+  94              		.loc 1 21 10 view .LVU20
+  95 0024 7047     		bx	lr
+  96              	.LVL6:
+  97              	.L5:
+  20:src/drivers/io.c ****   return S_OK;
+  98              		.loc 1 20 12 view .LVU21
+  99 0026 0120     		movs	r0, #1
+ 100              	.LVL7:
+  22:src/drivers/io.c **** }
+ 101              		.loc 1 22 1 view .LVU22
+ 102 0028 7047     		bx	lr
+ 103              		.cfi_endproc
+ 104              	.LFE1:
+ 106              		.section	.text.io_read,"ax",%progbits
+ 107              		.align	1
+ 108              		.global	io_read
+ 109              		.syntax unified
+ 110              		.thumb
+ 111              		.thumb_func
+ 113              	io_read:
+ 114              	.LVL8:
+ 115              	.LFB2:
+  23:src/drivers/io.c **** 
+  24:src/drivers/io.c **** io_state_e io_read(GPIO_TypeDef *pGPIOx, io_pin_e pinNumber)
+  25:src/drivers/io.c **** {
+ 116              		.loc 1 25 1 is_stmt 1 view -0
+ 117              		.cfi_startproc
+ 118              		@ args = 0, pretend = 0, frame = 0
+ 119              		@ frame_needed = 0, uses_anonymous_args = 0
+ 120              		@ link register save eliminated.
+  26:src/drivers/io.c ****   if(pGPIOx->IDR & (1U << pinNumber))
+ 121              		.loc 1 26 3 view .LVU24
+ 122              		.loc 1 26 12 is_stmt 0 view .LVU25
+ 123 0000 0269     		ldr	r2, [r0, #16]
+ 124              		.loc 1 26 24 view .LVU26
+ 125 0002 0123     		movs	r3, #1
+ 126 0004 8B40     		lsls	r3, r3, r1
+ 127              		.loc 1 26 5 view .LVU27
+ 128 0006 1A42     		tst	r2, r3
+ 129 0008 01D0     		beq	.L9
+  27:src/drivers/io.c ****     return  HIGH;
+ 130              		.loc 1 27 13 view .LVU28
+ 131 000a 0320     		movs	r0, #3
+ 132              	.LVL9:
+ 133              		.loc 1 27 13 view .LVU29
+ 134 000c 7047     		bx	lr
+ 135              	.LVL10:
+ 136              	.L9:
+  28:src/drivers/io.c ****   else
+  29:src/drivers/io.c ****     return LOW;
+ 137              		.loc 1 29 12 view .LVU30
+ 138 000e 0220     		movs	r0, #2
+ 139              	.LVL11:
+  30:src/drivers/io.c **** }
+ 140              		.loc 1 30 1 view .LVU31
+ARM GAS  C:\Users\daova\AppData\Local\Temp\cc6nVDok.s 			page 4
+
+
+ 141 0010 7047     		bx	lr
+ 142              		.cfi_endproc
+ 143              	.LFE2:
+ 145              		.text
+ 146              	.Letext0:
+ 147              		.file 2 "d:\\embedded\\embedded_sw\\arm_gcc\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 148              		.file 3 "d:\\embedded\\embedded_sw\\arm_gcc\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 149              		.file 4 "src/drivers/../common/memory_f411.h"
+ 150              		.file 5 "src/drivers/../common/define.h"
+ 151              		.file 6 "src/drivers/io.h"
+ARM GAS  C:\Users\daova\AppData\Local\Temp\cc6nVDok.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 io.c
+C:\Users\daova\AppData\Local\Temp\cc6nVDok.s:21     .text.io_init:00000000 $t
+C:\Users\daova\AppData\Local\Temp\cc6nVDok.s:27     .text.io_init:00000000 io_init
+C:\Users\daova\AppData\Local\Temp\cc6nVDok.s:40     .text.io_out:00000000 $t
+C:\Users\daova\AppData\Local\Temp\cc6nVDok.s:46     .text.io_out:00000000 io_out
+C:\Users\daova\AppData\Local\Temp\cc6nVDok.s:107    .text.io_read:00000000 $t
+C:\Users\daova\AppData\Local\Temp\cc6nVDok.s:113    .text.io_read:00000000 io_read
 
 NO UNDEFINED SYMBOLS

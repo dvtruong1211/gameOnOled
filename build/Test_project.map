@@ -74,13 +74,13 @@ Discarded input sections
  .data          0x00000000        0x0 build/main.o
  .bss           0x00000000        0x0 build/main.o
  .text.main     0x00000000        0x4 build/main.o
- .debug_info    0x00000000       0x4b build/main.o
- .debug_abbrev  0x00000000       0x3d build/main.o
+ .debug_info    0x00000000       0x91 build/main.o
+ .debug_abbrev  0x00000000       0x48 build/main.o
  .debug_aranges
                 0x00000000       0x20 build/main.o
  .debug_ranges  0x00000000       0x10 build/main.o
  .debug_line    0x00000000       0x43 build/main.o
- .debug_str     0x00000000       0xcf build/main.o
+ .debug_str     0x00000000      0x15f build/main.o
  .comment       0x00000000       0x46 build/main.o
  .debug_frame   0x00000000       0x20 build/main.o
  .ARM.attributes
@@ -96,9 +96,19 @@ Discarded input sections
  .text          0x00000000        0x0 build/io.o
  .data          0x00000000        0x0 build/io.o
  .bss           0x00000000        0x0 build/io.o
- .debug_line    0x00000000        0x0 build/io.o
- .debug_str     0x00000000       0xd0 build/io.o
+ .text.io_init  0x00000000        0x2 build/io.o
+ .text.io_out   0x00000000       0x2a build/io.o
+ .text.io_read  0x00000000       0x12 build/io.o
+ .debug_info    0x00000000      0x2cc build/io.o
+ .debug_abbrev  0x00000000      0x11f build/io.o
+ .debug_loc     0x00000000       0xf0 build/io.o
+ .debug_aranges
+                0x00000000       0x30 build/io.o
+ .debug_ranges  0x00000000       0x20 build/io.o
+ .debug_line    0x00000000      0x18b build/io.o
+ .debug_str     0x00000000      0x29d build/io.o
  .comment       0x00000000       0x46 build/io.o
+ .debug_frame   0x00000000       0x40 build/io.o
  .ARM.attributes
                 0x00000000       0x34 build/io.o
  .text          0x00000000        0x0 build/rcc.o
@@ -824,6 +834,9 @@ exit                                              d:/embedded/embedded_sw/arm_gc
 fflush                                            d:/embedded/embedded_sw/arm_gcc/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-fflush.o)
 g_pfnVectors                                      build/startup_stm32f411xe.o
 hardware_init_hook                                d:/embedded/embedded_sw/arm_gcc/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crt0.o
+io_init                                           build/io.o
+io_out                                            build/io.o
+io_read                                           build/io.o
 main                                              build/main.o
                                                   build/startup_stm32f411xe.o
                                                   d:/embedded/embedded_sw/arm_gcc/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crt0.o
