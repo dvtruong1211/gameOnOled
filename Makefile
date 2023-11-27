@@ -4,7 +4,7 @@
 BUILD_DIR = build
 
 #Target
-TARGET = MakeBuild
+TARGET = Test_project
 
 # Building variables
 DEBUG = 1
@@ -19,19 +19,28 @@ C_DEFS =  \
 
 # C sources
 C_SOURCES =  	\
-Src/main.c
+			src/main.c \
+			src/common/define.c \
+			src/drivers/io.c \
+			src/drivers/rcc.c \
+			src/common/it.c \
 
 # ASM sources
 ASM_SOURCES = 	\
-				startup_stm32f411xe.s	\
+				tools/startup_stm32f411xe.s	\
 
 # AS includes
 AS_INCLUDES = 	\
 
 # C includes
 C_INCLUDES =  	\
-				-IInc	\
+				-Isrcs/apps/		\
+				-Isrcs/common/ 	\
+				-Isrcs/drivers/ \
+				-Isrcs/test/ 		\
 
+#linker script
+LDSCRIPT = tools/STM32F411VETx_FLASH.ld
 
 GCC_PATH = D:/Embedded/Embedded_SW/arm_gcc/bin
 
@@ -68,8 +77,6 @@ endif
 # Generate dependency information
 CFLAGS += -MMD -MP -MF"$(@:%.o=%.d)"
 
-# link script
-LDSCRIPT = STM32F411VETx_FLASH.ld
 
 # libraries
 LIBS = -lc -lm -lnosys 
