@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\daova\AppData\Local\Temp\ccPkfjmd.s 			page 1
+ARM GAS  C:\Users\daova\AppData\Local\Temp\ccDDNIzx.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -40,27 +40,39 @@ ARM GAS  C:\Users\daova\AppData\Local\Temp\ccPkfjmd.s 			page 1
   10:src/main.c    **** {
   29              		.loc 1 10 1 view -0
   30              		.cfi_startproc
-  31              		@ args = 0, pretend = 0, frame = 0
-  32              		@ frame_needed = 0, uses_anonymous_args = 0
-  33              		@ link register save eliminated.
-  11:src/main.c    **** 
+  31              		@ Volatile: function does not return.
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34 0000 08B5     		push	{r3, lr}
+  35              	.LCFI0:
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 3, -8
+  38              		.cfi_offset 14, -4
+  11:src/main.c    ****   io_init();
+  39              		.loc 1 11 3 view .LVU1
+  40 0002 FFF7FEFF 		bl	io_init
+  41              	.LVL0:
+  42              	.L2:
   12:src/main.c    **** 
-  13:src/main.c    ****   return 0;
-  34              		.loc 1 13 3 view .LVU1
-  14:src/main.c    **** }
-  35              		.loc 1 14 1 is_stmt 0 view .LVU2
-  36 0000 0020     		movs	r0, #0
-  37 0002 7047     		bx	lr
-  38              		.cfi_endproc
-  39              	.LFE0:
-  41              		.text
-  42              	.Letext0:
-ARM GAS  C:\Users\daova\AppData\Local\Temp\ccPkfjmd.s 			page 2
+  13:src/main.c    ****   while(1);
+  43              		.loc 1 13 3 discriminator 1 view .LVU2
+  44              		.loc 1 13 8 discriminator 1 view .LVU3
+  45 0006 FEE7     		b	.L2
+ARM GAS  C:\Users\daova\AppData\Local\Temp\ccDDNIzx.s 			page 2
+
+
+  46              		.cfi_endproc
+  47              	.LFE0:
+  49              		.text
+  50              	.Letext0:
+  51              		.file 2 "src/drivers/io.h"
+ARM GAS  C:\Users\daova\AppData\Local\Temp\ccDDNIzx.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\daova\AppData\Local\Temp\ccPkfjmd.s:21     .text.main:00000000 $t
-C:\Users\daova\AppData\Local\Temp\ccPkfjmd.s:27     .text.main:00000000 main
+C:\Users\daova\AppData\Local\Temp\ccDDNIzx.s:21     .text.main:00000000 $t
+C:\Users\daova\AppData\Local\Temp\ccDDNIzx.s:27     .text.main:00000000 main
 
-NO UNDEFINED SYMBOLS
+UNDEFINED SYMBOLS
+io_init

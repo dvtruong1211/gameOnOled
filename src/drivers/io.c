@@ -1,10 +1,22 @@
 
 #include "io.h"
 
-
+uint32_t tempreg;
 
 void io_init(void)
 {
+  //Enable clock for gpio port
+  GPIOD_CLOCK_ENABLE();
+  //Configure pin as input pin
+  //uint32_t tempreg;
+  tempreg = read_reg(GPIOD->MODER, ~((uint32_t)(0x03 << 2*BT_LEFT) | (uint32_t)(0x03 << 2*BT_RIGHT) | (uint32_t)(0x03 << 2*BT_MID)));
+  tempreg = tempreg | ((IO_MODE_INPUT << 2*BT_LEFT) | (IO_MODE_INPUT << 2*BT_RIGHT)  | (IO_MODE_INPUT << 2*BT_MID));
+  write_reg(GPIOD->MODER, tempreg);
+
+  //Enable pull up
+  tempreg = read_reg(GPIOD->PUPDR, ~((uint32_t)(0x03 << 2*BT_LEFT) | (uint32_t)(0x03 << 2*BT_RIGHT) | (uint32_t)(0x03 << 2*BT_MID)));
+  tempreg = tempreg | ((IO_PULL_UP << 2*BT_LEFT) | (IO_PULL_UP << 2*BT_RIGHT) | (IO_PULL_UP << 2*BT_MID));
+  write_reg(GPIOD->PUPDR, tempreg);
   
 }
 

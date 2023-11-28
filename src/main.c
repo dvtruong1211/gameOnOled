@@ -8,7 +8,9 @@
 
 int main(void)
 {
+  io_init();
 
+  while(1);
 
   return 0;
 }

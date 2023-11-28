@@ -2,12 +2,10 @@
 #ifndef __IO_H
 #define __IO_H
 
-#include "memory_f411.h"
+#include "../common/memory_f411.h"
 #include "../common/define.h"
 
 //Define the io button
-
-
 typedef enum{
   LOW = 2,
   HIGH
@@ -31,6 +29,20 @@ typedef enum{
   IO_PIN_14,
   IO_PIN_15
 }io_pin_e;
+
+
+#define BT_LEFT  IO_PIN_0
+#define BT_MID   IO_PIN_1
+#define BT_RIGHT IO_PIN_2
+
+/*
+ *****Config the pin******
+ */
+#define IO_MODE_OUTPUT   1U
+#define IO_MODE_INPUT    0U
+
+#define IO_PULL_UP       1U   
+
 
 
 

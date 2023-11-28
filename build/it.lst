@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s 			page 1
+ARM GAS  C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -20,378 +20,366 @@ ARM GAS  C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s 			page 1
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
   19              		.file 1 "src/common/it.c"
-  20              		.section	.text.SysTick_Handler,"ax",%progbits
+  20              		.section	.text.SystemInit,"ax",%progbits
   21              		.align	1
-  22              		.global	SysTick_Handler
+  22              		.global	SystemInit
   23              		.syntax unified
   24              		.thumb
   25              		.thumb_func
-  27              	SysTick_Handler:
+  27              	SystemInit:
   28              	.LFB0:
    1:src/common/it.c **** 
    2:src/common/it.c **** 
    3:src/common/it.c **** /********   Interrupt function handle   ********/
    4:src/common/it.c **** 
-   5:src/common/it.c **** void SysTick_Handler(void)
+   5:src/common/it.c **** void SystemInit(void)
    6:src/common/it.c **** {
   29              		.loc 1 6 1 view -0
   30              		.cfi_startproc
-  31              		@ Volatile: function does not return.
-  32              		@ args = 0, pretend = 0, frame = 0
-  33              		@ frame_needed = 0, uses_anonymous_args = 0
-  34              		@ link register save eliminated.
-  35              	.L2:
-   7:src/common/it.c ****   while(1)
-  36              		.loc 1 7 3 discriminator 1 view .LVU1
-   8:src/common/it.c ****   {
-   9:src/common/it.c ****     //Do something ...
-  10:src/common/it.c ****   }
-  37              		.loc 1 10 3 discriminator 1 view .LVU2
-   7:src/common/it.c ****   while(1)
-  38              		.loc 1 7 8 discriminator 1 view .LVU3
-  39 0000 FEE7     		b	.L2
-  40              		.cfi_endproc
-  41              	.LFE0:
-  43              		.section	.text.Reserved_Handler,"ax",%progbits
-  44              		.align	1
-  45              		.global	Reserved_Handler
-  46              		.syntax unified
-  47              		.thumb
-  48              		.thumb_func
-ARM GAS  C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s 			page 2
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+   7:src/common/it.c **** 
+   8:src/common/it.c **** }
+  34              		.loc 1 8 1 view .LVU1
+  35 0000 7047     		bx	lr
+  36              		.cfi_endproc
+  37              	.LFE0:
+  39              		.section	.text.SysTick_Handler,"ax",%progbits
+  40              		.align	1
+  41              		.global	SysTick_Handler
+  42              		.syntax unified
+  43              		.thumb
+  44              		.thumb_func
+  46              	SysTick_Handler:
+  47              	.LFB1:
+   9:src/common/it.c **** 
+  10:src/common/it.c **** void SysTick_Handler(void)
+  11:src/common/it.c **** {
+  48              		.loc 1 11 1 view -0
+  49              		.cfi_startproc
+ARM GAS  C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s 			page 2
 
 
-  50              	Reserved_Handler:
-  51              	.LFB1:
-  11:src/common/it.c **** }
-  12:src/common/it.c **** 
-  13:src/common/it.c **** void Reserved_Handler(void) //Dummy function (need to be renamed) 
-  14:src/common/it.c **** {
-  52              		.loc 1 14 1 view -0
-  53              		.cfi_startproc
-  54              		@ args = 0, pretend = 0, frame = 0
-  55              		@ frame_needed = 0, uses_anonymous_args = 0
-  56              		@ link register save eliminated.
-  15:src/common/it.c ****   // .....................
-  16:src/common/it.c **** }
-  57              		.loc 1 16 1 view .LVU5
-  58 0000 7047     		bx	lr
+  50              		@ Volatile: function does not return.
+  51              		@ args = 0, pretend = 0, frame = 0
+  52              		@ frame_needed = 0, uses_anonymous_args = 0
+  53              		@ link register save eliminated.
+  54              	.L3:
+  12:src/common/it.c ****   while(1)
+  55              		.loc 1 12 3 discriminator 1 view .LVU3
+  13:src/common/it.c ****   {
+  14:src/common/it.c ****     //Do something ...
+  15:src/common/it.c ****   }
+  56              		.loc 1 15 3 discriminator 1 view .LVU4
+  12:src/common/it.c ****   while(1)
+  57              		.loc 1 12 8 discriminator 1 view .LVU5
+  58 0000 FEE7     		b	.L3
   59              		.cfi_endproc
   60              	.LFE1:
-  62              		.section	.text.Reset_Handler,"ax",%progbits
+  62              		.section	.text.Reserved_Handler,"ax",%progbits
   63              		.align	1
-  64              		.global	Reset_Handler
+  64              		.global	Reserved_Handler
   65              		.syntax unified
   66              		.thumb
   67              		.thumb_func
-  69              	Reset_Handler:
+  69              	Reserved_Handler:
   70              	.LFB2:
+  16:src/common/it.c **** }
   17:src/common/it.c **** 
-  18:src/common/it.c **** void Reset_Handler(void)
+  18:src/common/it.c **** void Reserved_Handler(void) //Dummy function (need to be renamed) 
   19:src/common/it.c **** {
   71              		.loc 1 19 1 view -0
   72              		.cfi_startproc
-  73              		@ Volatile: function does not return.
-  74              		@ args = 0, pretend = 0, frame = 0
-  75              		@ frame_needed = 0, uses_anonymous_args = 0
-  76              		@ link register save eliminated.
-  77              	.L5:
-  20:src/common/it.c ****   while(1)
-  78              		.loc 1 20 3 discriminator 1 view .LVU7
-  21:src/common/it.c ****   {
-  22:src/common/it.c ****     //Do something ...
-  23:src/common/it.c ****   }
-  79              		.loc 1 23 3 discriminator 1 view .LVU8
-  20:src/common/it.c ****   while(1)
-  80              		.loc 1 20 8 discriminator 1 view .LVU9
-  81 0000 FEE7     		b	.L5
-  82              		.cfi_endproc
-  83              	.LFE2:
-  85              		.section	.text.NMI_Handler,"ax",%progbits
-  86              		.align	1
-  87              		.global	NMI_Handler
-  88              		.syntax unified
-  89              		.thumb
-  90              		.thumb_func
-  92              	NMI_Handler:
-  93              	.LFB3:
-  24:src/common/it.c **** }
-  25:src/common/it.c **** 
-  26:src/common/it.c **** 
-ARM GAS  C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s 			page 3
+  73              		@ args = 0, pretend = 0, frame = 0
+  74              		@ frame_needed = 0, uses_anonymous_args = 0
+  75              		@ link register save eliminated.
+  20:src/common/it.c ****   // .....................
+  21:src/common/it.c **** }
+  76              		.loc 1 21 1 view .LVU7
+  77 0000 7047     		bx	lr
+  78              		.cfi_endproc
+  79              	.LFE2:
+  81              		.section	.text.NMI_Handler,"ax",%progbits
+  82              		.align	1
+  83              		.global	NMI_Handler
+  84              		.syntax unified
+  85              		.thumb
+  86              		.thumb_func
+  88              	NMI_Handler:
+  89              	.LFB3:
+  22:src/common/it.c **** 
+  23:src/common/it.c **** void NMI_Handler(void)
+  24:src/common/it.c **** {
+  90              		.loc 1 24 1 view -0
+  91              		.cfi_startproc
+  92              		@ Volatile: function does not return.
+  93              		@ args = 0, pretend = 0, frame = 0
+  94              		@ frame_needed = 0, uses_anonymous_args = 0
+  95              		@ link register save eliminated.
+  96              	.L6:
+ARM GAS  C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s 			page 3
 
 
-  27:src/common/it.c **** void NMI_Handler(void)
-  28:src/common/it.c **** {
-  94              		.loc 1 28 1 view -0
-  95              		.cfi_startproc
-  96              		@ Volatile: function does not return.
-  97              		@ args = 0, pretend = 0, frame = 0
-  98              		@ frame_needed = 0, uses_anonymous_args = 0
-  99              		@ link register save eliminated.
- 100              	.L7:
-  29:src/common/it.c ****   while(1)
- 101              		.loc 1 29 3 discriminator 1 view .LVU11
-  30:src/common/it.c ****   {
-  31:src/common/it.c ****     //Do something ...
-  32:src/common/it.c ****   }
- 102              		.loc 1 32 3 discriminator 1 view .LVU12
-  29:src/common/it.c ****   while(1)
- 103              		.loc 1 29 8 discriminator 1 view .LVU13
- 104 0000 FEE7     		b	.L7
- 105              		.cfi_endproc
- 106              	.LFE3:
- 108              		.section	.text.HardFault_Handler,"ax",%progbits
- 109              		.align	1
- 110              		.global	HardFault_Handler
- 111              		.syntax unified
- 112              		.thumb
- 113              		.thumb_func
- 115              	HardFault_Handler:
- 116              	.LFB4:
-  33:src/common/it.c **** }
-  34:src/common/it.c **** 
-  35:src/common/it.c **** void HardFault_Handler(void)
-  36:src/common/it.c **** {
- 117              		.loc 1 36 1 view -0
- 118              		.cfi_startproc
- 119              		@ Volatile: function does not return.
- 120              		@ args = 0, pretend = 0, frame = 0
- 121              		@ frame_needed = 0, uses_anonymous_args = 0
- 122              		@ link register save eliminated.
- 123              	.L9:
-  37:src/common/it.c ****   while(1)
- 124              		.loc 1 37 3 discriminator 1 view .LVU15
-  38:src/common/it.c ****   {
-  39:src/common/it.c ****     //Do something ...
-  40:src/common/it.c ****   }
- 125              		.loc 1 40 3 discriminator 1 view .LVU16
-  37:src/common/it.c ****   while(1)
- 126              		.loc 1 37 8 discriminator 1 view .LVU17
- 127 0000 FEE7     		b	.L9
- 128              		.cfi_endproc
- 129              	.LFE4:
- 131              		.section	.text.MemManage_Handler,"ax",%progbits
- 132              		.align	1
- 133              		.global	MemManage_Handler
- 134              		.syntax unified
- 135              		.thumb
- 136              		.thumb_func
- 138              	MemManage_Handler:
-ARM GAS  C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s 			page 4
+  25:src/common/it.c ****   while(1)
+  97              		.loc 1 25 3 discriminator 1 view .LVU9
+  26:src/common/it.c ****   {
+  27:src/common/it.c ****     //Do something ...
+  28:src/common/it.c ****   }
+  98              		.loc 1 28 3 discriminator 1 view .LVU10
+  25:src/common/it.c ****   while(1)
+  99              		.loc 1 25 8 discriminator 1 view .LVU11
+ 100 0000 FEE7     		b	.L6
+ 101              		.cfi_endproc
+ 102              	.LFE3:
+ 104              		.section	.text.HardFault_Handler,"ax",%progbits
+ 105              		.align	1
+ 106              		.global	HardFault_Handler
+ 107              		.syntax unified
+ 108              		.thumb
+ 109              		.thumb_func
+ 111              	HardFault_Handler:
+ 112              	.LFB4:
+  29:src/common/it.c **** }
+  30:src/common/it.c **** 
+  31:src/common/it.c **** void HardFault_Handler(void)
+  32:src/common/it.c **** {
+ 113              		.loc 1 32 1 view -0
+ 114              		.cfi_startproc
+ 115              		@ Volatile: function does not return.
+ 116              		@ args = 0, pretend = 0, frame = 0
+ 117              		@ frame_needed = 0, uses_anonymous_args = 0
+ 118              		@ link register save eliminated.
+ 119              	.L8:
+  33:src/common/it.c ****   while(1)
+ 120              		.loc 1 33 3 discriminator 1 view .LVU13
+  34:src/common/it.c ****   {
+  35:src/common/it.c ****     //Do something ...
+  36:src/common/it.c ****   }
+ 121              		.loc 1 36 3 discriminator 1 view .LVU14
+  33:src/common/it.c ****   while(1)
+ 122              		.loc 1 33 8 discriminator 1 view .LVU15
+ 123 0000 FEE7     		b	.L8
+ 124              		.cfi_endproc
+ 125              	.LFE4:
+ 127              		.section	.text.MemManage_Handler,"ax",%progbits
+ 128              		.align	1
+ 129              		.global	MemManage_Handler
+ 130              		.syntax unified
+ 131              		.thumb
+ 132              		.thumb_func
+ 134              	MemManage_Handler:
+ 135              	.LFB5:
+  37:src/common/it.c **** }
+  38:src/common/it.c **** 
+  39:src/common/it.c **** 
+  40:src/common/it.c **** void MemManage_Handler(void)
+  41:src/common/it.c **** {
+ 136              		.loc 1 41 1 view -0
+ 137              		.cfi_startproc
+ 138              		@ Volatile: function does not return.
+ARM GAS  C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s 			page 4
 
 
- 139              	.LFB5:
-  41:src/common/it.c **** }
-  42:src/common/it.c **** 
-  43:src/common/it.c **** 
-  44:src/common/it.c **** void MemManage_Handler(void)
-  45:src/common/it.c **** {
- 140              		.loc 1 45 1 view -0
- 141              		.cfi_startproc
- 142              		@ Volatile: function does not return.
- 143              		@ args = 0, pretend = 0, frame = 0
- 144              		@ frame_needed = 0, uses_anonymous_args = 0
- 145              		@ link register save eliminated.
- 146              	.L11:
-  46:src/common/it.c ****   while(1)
- 147              		.loc 1 46 3 discriminator 1 view .LVU19
-  47:src/common/it.c ****   {
-  48:src/common/it.c ****     //Do something ...
-  49:src/common/it.c ****   }
- 148              		.loc 1 49 3 discriminator 1 view .LVU20
-  46:src/common/it.c ****   while(1)
- 149              		.loc 1 46 8 discriminator 1 view .LVU21
- 150 0000 FEE7     		b	.L11
- 151              		.cfi_endproc
- 152              	.LFE5:
- 154              		.section	.text.BusFault_Handler,"ax",%progbits
- 155              		.align	1
- 156              		.global	BusFault_Handler
- 157              		.syntax unified
- 158              		.thumb
- 159              		.thumb_func
- 161              	BusFault_Handler:
- 162              	.LFB6:
-  50:src/common/it.c **** }
-  51:src/common/it.c **** 
-  52:src/common/it.c **** void BusFault_Handler(void)
-  53:src/common/it.c **** {
- 163              		.loc 1 53 1 view -0
- 164              		.cfi_startproc
- 165              		@ Volatile: function does not return.
- 166              		@ args = 0, pretend = 0, frame = 0
- 167              		@ frame_needed = 0, uses_anonymous_args = 0
- 168              		@ link register save eliminated.
- 169              	.L13:
-  54:src/common/it.c ****   while(1)
- 170              		.loc 1 54 3 discriminator 1 view .LVU23
-  55:src/common/it.c ****   {
-  56:src/common/it.c ****     //Do something ...
-  57:src/common/it.c ****   }
- 171              		.loc 1 57 3 discriminator 1 view .LVU24
-  54:src/common/it.c ****   while(1)
- 172              		.loc 1 54 8 discriminator 1 view .LVU25
- 173 0000 FEE7     		b	.L13
- 174              		.cfi_endproc
- 175              	.LFE6:
- 177              		.section	.text.UsageFault_Handler,"ax",%progbits
- 178              		.align	1
- 179              		.global	UsageFault_Handler
-ARM GAS  C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s 			page 5
+ 139              		@ args = 0, pretend = 0, frame = 0
+ 140              		@ frame_needed = 0, uses_anonymous_args = 0
+ 141              		@ link register save eliminated.
+ 142              	.L10:
+  42:src/common/it.c ****   while(1)
+ 143              		.loc 1 42 3 discriminator 1 view .LVU17
+  43:src/common/it.c ****   {
+  44:src/common/it.c ****     //Do something ...
+  45:src/common/it.c ****   }
+ 144              		.loc 1 45 3 discriminator 1 view .LVU18
+  42:src/common/it.c ****   while(1)
+ 145              		.loc 1 42 8 discriminator 1 view .LVU19
+ 146 0000 FEE7     		b	.L10
+ 147              		.cfi_endproc
+ 148              	.LFE5:
+ 150              		.section	.text.BusFault_Handler,"ax",%progbits
+ 151              		.align	1
+ 152              		.global	BusFault_Handler
+ 153              		.syntax unified
+ 154              		.thumb
+ 155              		.thumb_func
+ 157              	BusFault_Handler:
+ 158              	.LFB6:
+  46:src/common/it.c **** }
+  47:src/common/it.c **** 
+  48:src/common/it.c **** void BusFault_Handler(void)
+  49:src/common/it.c **** {
+ 159              		.loc 1 49 1 view -0
+ 160              		.cfi_startproc
+ 161              		@ Volatile: function does not return.
+ 162              		@ args = 0, pretend = 0, frame = 0
+ 163              		@ frame_needed = 0, uses_anonymous_args = 0
+ 164              		@ link register save eliminated.
+ 165              	.L12:
+  50:src/common/it.c ****   while(1)
+ 166              		.loc 1 50 3 discriminator 1 view .LVU21
+  51:src/common/it.c ****   {
+  52:src/common/it.c ****     //Do something ...
+  53:src/common/it.c ****   }
+ 167              		.loc 1 53 3 discriminator 1 view .LVU22
+  50:src/common/it.c ****   while(1)
+ 168              		.loc 1 50 8 discriminator 1 view .LVU23
+ 169 0000 FEE7     		b	.L12
+ 170              		.cfi_endproc
+ 171              	.LFE6:
+ 173              		.section	.text.UsageFault_Handler,"ax",%progbits
+ 174              		.align	1
+ 175              		.global	UsageFault_Handler
+ 176              		.syntax unified
+ 177              		.thumb
+ 178              		.thumb_func
+ 180              	UsageFault_Handler:
+ 181              	.LFB7:
+  54:src/common/it.c **** }
+  55:src/common/it.c **** 
+  56:src/common/it.c **** void UsageFault_Handler(void)
+  57:src/common/it.c **** {
+ARM GAS  C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s 			page 5
 
 
- 180              		.syntax unified
- 181              		.thumb
- 182              		.thumb_func
- 184              	UsageFault_Handler:
- 185              	.LFB7:
-  58:src/common/it.c **** }
-  59:src/common/it.c **** 
-  60:src/common/it.c **** void UsageFault_Handler(void)
-  61:src/common/it.c **** {
- 186              		.loc 1 61 1 view -0
- 187              		.cfi_startproc
- 188              		@ Volatile: function does not return.
- 189              		@ args = 0, pretend = 0, frame = 0
- 190              		@ frame_needed = 0, uses_anonymous_args = 0
- 191              		@ link register save eliminated.
- 192              	.L15:
-  62:src/common/it.c ****   while(1)
- 193              		.loc 1 62 3 discriminator 1 view .LVU27
-  63:src/common/it.c ****   {
-  64:src/common/it.c ****     //Do something ...
-  65:src/common/it.c ****   }
- 194              		.loc 1 65 3 discriminator 1 view .LVU28
-  62:src/common/it.c ****   while(1)
- 195              		.loc 1 62 8 discriminator 1 view .LVU29
- 196 0000 FEE7     		b	.L15
- 197              		.cfi_endproc
- 198              	.LFE7:
- 200              		.section	.text.SVC_Handler,"ax",%progbits
- 201              		.align	1
- 202              		.global	SVC_Handler
- 203              		.syntax unified
- 204              		.thumb
- 205              		.thumb_func
- 207              	SVC_Handler:
- 208              	.LFB8:
-  66:src/common/it.c **** }
-  67:src/common/it.c **** 
-  68:src/common/it.c **** void SVC_Handler(void)
-  69:src/common/it.c **** {
- 209              		.loc 1 69 1 view -0
- 210              		.cfi_startproc
- 211              		@ Volatile: function does not return.
- 212              		@ args = 0, pretend = 0, frame = 0
- 213              		@ frame_needed = 0, uses_anonymous_args = 0
- 214              		@ link register save eliminated.
- 215              	.L17:
-  70:src/common/it.c ****   while(1)
- 216              		.loc 1 70 3 discriminator 1 view .LVU31
-  71:src/common/it.c ****   {
-  72:src/common/it.c ****     //Do something ...
-  73:src/common/it.c ****   }
- 217              		.loc 1 73 3 discriminator 1 view .LVU32
-  70:src/common/it.c ****   while(1)
- 218              		.loc 1 70 8 discriminator 1 view .LVU33
- 219 0000 FEE7     		b	.L17
- 220              		.cfi_endproc
- 221              	.LFE8:
-ARM GAS  C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s 			page 6
+ 182              		.loc 1 57 1 view -0
+ 183              		.cfi_startproc
+ 184              		@ Volatile: function does not return.
+ 185              		@ args = 0, pretend = 0, frame = 0
+ 186              		@ frame_needed = 0, uses_anonymous_args = 0
+ 187              		@ link register save eliminated.
+ 188              	.L14:
+  58:src/common/it.c ****   while(1)
+ 189              		.loc 1 58 3 discriminator 1 view .LVU25
+  59:src/common/it.c ****   {
+  60:src/common/it.c ****     //Do something ...
+  61:src/common/it.c ****   }
+ 190              		.loc 1 61 3 discriminator 1 view .LVU26
+  58:src/common/it.c ****   while(1)
+ 191              		.loc 1 58 8 discriminator 1 view .LVU27
+ 192 0000 FEE7     		b	.L14
+ 193              		.cfi_endproc
+ 194              	.LFE7:
+ 196              		.section	.text.SVC_Handler,"ax",%progbits
+ 197              		.align	1
+ 198              		.global	SVC_Handler
+ 199              		.syntax unified
+ 200              		.thumb
+ 201              		.thumb_func
+ 203              	SVC_Handler:
+ 204              	.LFB8:
+  62:src/common/it.c **** }
+  63:src/common/it.c **** 
+  64:src/common/it.c **** void SVC_Handler(void)
+  65:src/common/it.c **** {
+ 205              		.loc 1 65 1 view -0
+ 206              		.cfi_startproc
+ 207              		@ Volatile: function does not return.
+ 208              		@ args = 0, pretend = 0, frame = 0
+ 209              		@ frame_needed = 0, uses_anonymous_args = 0
+ 210              		@ link register save eliminated.
+ 211              	.L16:
+  66:src/common/it.c ****   while(1)
+ 212              		.loc 1 66 3 discriminator 1 view .LVU29
+  67:src/common/it.c ****   {
+  68:src/common/it.c ****     //Do something ...
+  69:src/common/it.c ****   }
+ 213              		.loc 1 69 3 discriminator 1 view .LVU30
+  66:src/common/it.c ****   while(1)
+ 214              		.loc 1 66 8 discriminator 1 view .LVU31
+ 215 0000 FEE7     		b	.L16
+ 216              		.cfi_endproc
+ 217              	.LFE8:
+ 219              		.section	.text.DebugMon_Handler,"ax",%progbits
+ 220              		.align	1
+ 221              		.global	DebugMon_Handler
+ 222              		.syntax unified
+ 223              		.thumb
+ 224              		.thumb_func
+ 226              	DebugMon_Handler:
+ 227              	.LFB9:
+  70:src/common/it.c **** }
+ARM GAS  C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s 			page 6
 
 
- 223              		.section	.text.DebugMon_Handler,"ax",%progbits
- 224              		.align	1
- 225              		.global	DebugMon_Handler
- 226              		.syntax unified
- 227              		.thumb
- 228              		.thumb_func
- 230              	DebugMon_Handler:
- 231              	.LFB9:
-  74:src/common/it.c **** }
-  75:src/common/it.c **** 
-  76:src/common/it.c **** void DebugMon_Handler(void)
-  77:src/common/it.c **** {
- 232              		.loc 1 77 1 view -0
- 233              		.cfi_startproc
- 234              		@ Volatile: function does not return.
- 235              		@ args = 0, pretend = 0, frame = 0
- 236              		@ frame_needed = 0, uses_anonymous_args = 0
- 237              		@ link register save eliminated.
- 238              	.L19:
-  78:src/common/it.c ****   while(1)
- 239              		.loc 1 78 3 discriminator 1 view .LVU35
-  79:src/common/it.c ****   {
-  80:src/common/it.c ****     //Do something ...
-  81:src/common/it.c ****   }
- 240              		.loc 1 81 3 discriminator 1 view .LVU36
-  78:src/common/it.c ****   while(1)
- 241              		.loc 1 78 8 discriminator 1 view .LVU37
- 242 0000 FEE7     		b	.L19
- 243              		.cfi_endproc
- 244              	.LFE9:
- 246              		.section	.text.PendSV_Handler,"ax",%progbits
- 247              		.align	1
- 248              		.global	PendSV_Handler
- 249              		.syntax unified
- 250              		.thumb
- 251              		.thumb_func
- 253              	PendSV_Handler:
- 254              	.LFB10:
-  82:src/common/it.c **** }
-  83:src/common/it.c **** 
-  84:src/common/it.c **** void PendSV_Handler(void)
-  85:src/common/it.c **** {
- 255              		.loc 1 85 1 view -0
- 256              		.cfi_startproc
- 257              		@ Volatile: function does not return.
- 258              		@ args = 0, pretend = 0, frame = 0
- 259              		@ frame_needed = 0, uses_anonymous_args = 0
- 260              		@ link register save eliminated.
- 261              	.L21:
-  86:src/common/it.c ****   while(1)
- 262              		.loc 1 86 3 discriminator 1 view .LVU39
-  87:src/common/it.c ****   {
-  88:src/common/it.c ****     //Do something ...
-  89:src/common/it.c ****   }
- 263              		.loc 1 89 3 discriminator 1 view .LVU40
-  86:src/common/it.c ****   while(1)
- 264              		.loc 1 86 8 discriminator 1 view .LVU41
-ARM GAS  C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s 			page 7
-
-
- 265 0000 FEE7     		b	.L21
- 266              		.cfi_endproc
- 267              	.LFE10:
- 269              		.text
- 270              	.Letext0:
-ARM GAS  C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s 			page 8
+  71:src/common/it.c **** 
+  72:src/common/it.c **** void DebugMon_Handler(void)
+  73:src/common/it.c **** {
+ 228              		.loc 1 73 1 view -0
+ 229              		.cfi_startproc
+ 230              		@ Volatile: function does not return.
+ 231              		@ args = 0, pretend = 0, frame = 0
+ 232              		@ frame_needed = 0, uses_anonymous_args = 0
+ 233              		@ link register save eliminated.
+ 234              	.L18:
+  74:src/common/it.c ****   while(1)
+ 235              		.loc 1 74 3 discriminator 1 view .LVU33
+  75:src/common/it.c ****   {
+  76:src/common/it.c ****     //Do something ...
+  77:src/common/it.c ****   }
+ 236              		.loc 1 77 3 discriminator 1 view .LVU34
+  74:src/common/it.c ****   while(1)
+ 237              		.loc 1 74 8 discriminator 1 view .LVU35
+ 238 0000 FEE7     		b	.L18
+ 239              		.cfi_endproc
+ 240              	.LFE9:
+ 242              		.section	.text.PendSV_Handler,"ax",%progbits
+ 243              		.align	1
+ 244              		.global	PendSV_Handler
+ 245              		.syntax unified
+ 246              		.thumb
+ 247              		.thumb_func
+ 249              	PendSV_Handler:
+ 250              	.LFB10:
+  78:src/common/it.c **** }
+  79:src/common/it.c **** 
+  80:src/common/it.c **** void PendSV_Handler(void)
+  81:src/common/it.c **** {
+ 251              		.loc 1 81 1 view -0
+ 252              		.cfi_startproc
+ 253              		@ Volatile: function does not return.
+ 254              		@ args = 0, pretend = 0, frame = 0
+ 255              		@ frame_needed = 0, uses_anonymous_args = 0
+ 256              		@ link register save eliminated.
+ 257              	.L20:
+  82:src/common/it.c ****   while(1)
+ 258              		.loc 1 82 3 discriminator 1 view .LVU37
+  83:src/common/it.c ****   {
+  84:src/common/it.c ****     //Do something ...
+  85:src/common/it.c ****   }
+ 259              		.loc 1 85 3 discriminator 1 view .LVU38
+  82:src/common/it.c ****   while(1)
+ 260              		.loc 1 82 8 discriminator 1 view .LVU39
+ 261 0000 FEE7     		b	.L20
+ 262              		.cfi_endproc
+ 263              	.LFE10:
+ 265              		.text
+ 266              	.Letext0:
+ARM GAS  C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 it.c
-C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s:21     .text.SysTick_Handler:00000000 $t
-C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s:27     .text.SysTick_Handler:00000000 SysTick_Handler
-C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s:44     .text.Reserved_Handler:00000000 $t
-C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s:50     .text.Reserved_Handler:00000000 Reserved_Handler
-C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s:63     .text.Reset_Handler:00000000 $t
-C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s:69     .text.Reset_Handler:00000000 Reset_Handler
-C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s:86     .text.NMI_Handler:00000000 $t
-C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s:92     .text.NMI_Handler:00000000 NMI_Handler
-C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s:109    .text.HardFault_Handler:00000000 $t
-C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s:115    .text.HardFault_Handler:00000000 HardFault_Handler
-C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s:132    .text.MemManage_Handler:00000000 $t
-C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s:138    .text.MemManage_Handler:00000000 MemManage_Handler
-C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s:155    .text.BusFault_Handler:00000000 $t
-C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s:161    .text.BusFault_Handler:00000000 BusFault_Handler
-C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s:178    .text.UsageFault_Handler:00000000 $t
-C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s:184    .text.UsageFault_Handler:00000000 UsageFault_Handler
-C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s:201    .text.SVC_Handler:00000000 $t
-C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s:207    .text.SVC_Handler:00000000 SVC_Handler
-C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s:224    .text.DebugMon_Handler:00000000 $t
-C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s:230    .text.DebugMon_Handler:00000000 DebugMon_Handler
-C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s:247    .text.PendSV_Handler:00000000 $t
-C:\Users\daova\AppData\Local\Temp\ccaK6Tlt.s:253    .text.PendSV_Handler:00000000 PendSV_Handler
+C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s:21     .text.SystemInit:00000000 $t
+C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s:27     .text.SystemInit:00000000 SystemInit
+C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s:40     .text.SysTick_Handler:00000000 $t
+C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s:46     .text.SysTick_Handler:00000000 SysTick_Handler
+C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s:63     .text.Reserved_Handler:00000000 $t
+C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s:69     .text.Reserved_Handler:00000000 Reserved_Handler
+C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s:82     .text.NMI_Handler:00000000 $t
+C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s:88     .text.NMI_Handler:00000000 NMI_Handler
+C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s:105    .text.HardFault_Handler:00000000 $t
+C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s:111    .text.HardFault_Handler:00000000 HardFault_Handler
+C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s:128    .text.MemManage_Handler:00000000 $t
+C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s:134    .text.MemManage_Handler:00000000 MemManage_Handler
+C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s:151    .text.BusFault_Handler:00000000 $t
+C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s:157    .text.BusFault_Handler:00000000 BusFault_Handler
+C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s:174    .text.UsageFault_Handler:00000000 $t
+C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s:180    .text.UsageFault_Handler:00000000 UsageFault_Handler
+C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s:197    .text.SVC_Handler:00000000 $t
+C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s:203    .text.SVC_Handler:00000000 SVC_Handler
+C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s:220    .text.DebugMon_Handler:00000000 $t
+C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s:226    .text.DebugMon_Handler:00000000 DebugMon_Handler
+C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s:243    .text.PendSV_Handler:00000000 $t
+C:\Users\daova\AppData\Local\Temp\ccMDu3PR.s:249    .text.PendSV_Handler:00000000 PendSV_Handler
 
 NO UNDEFINED SYMBOLS

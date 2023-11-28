@@ -2,6 +2,11 @@
 
 /********   Interrupt function handle   ********/
 
+void SystemInit(void)
+{
+
+}
+
 void SysTick_Handler(void)
 {
   while(1)
@@ -14,15 +19,6 @@ void Reserved_Handler(void) //Dummy function (need to be renamed)
 {
   // .....................
 }
-
-void Reset_Handler(void)
-{
-  while(1)
-  {
-    //Do something ...
-  }
-}
-
 
 void NMI_Handler(void)
 {

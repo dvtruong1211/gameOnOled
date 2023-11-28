@@ -27,7 +27,7 @@ C_SOURCES =  	\
 
 # ASM sources
 ASM_SOURCES = 	\
-				tools/startup_stm32f411xe.s	\
+				tools/startup_stm32f411xe.s\
 
 # AS includes
 AS_INCLUDES = 	\
